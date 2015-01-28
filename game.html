@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>linkGame</title>
+    <style>
+        .wallBlock,.block {
+            width: 28px;
+            height: 28px;
+            border: 1px #fff solid;
+            float: left;
+            line-height: 28px;
+            color: #fff;
+            text-align: center;
+            font-family: "sans-self";
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .wallBlock {
+            background: none;
+            width: 30px;
+            height: 30px;
+            border: none;
+        }
+
+        .matched {
+            visibility: hidden;
+            opacity: 0;
+            cursor: default !important;
+        }
+        .clicked {
+            border-color:#000;
+        }
+        .block {
+            background: #00f;
+        }
+        .gameBody {
+            position: relative;
+        }
+        .gameCanvas {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .tipClass {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+<script src="main.js"></script>
+<button id="tipButton">提示</button>
+<button id="randButton">打乱</button>
+<script>
+    (new linkGame({
+        width: 6,
+        height: 8,
+        blockCss: "block",
+        tipButton: document.getElementById("tipButton"),
+        randButton: document.getElementById("randButton")
+    })).Start();
+</script>
+</body>
+</html>
